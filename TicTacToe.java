@@ -13,7 +13,7 @@ public class TicTacToe {
     this.playersNames = playersNames;
     initializeGrid();
   }
- 
+
   public void play(){
     getPosition();
     print();
@@ -158,7 +158,7 @@ public class TicTacToe {
           }
         }
       }
-      if (bool && (indexHorizontal == (grid.length - 1))) {
+      if (bool && (indexV == (grid.length - 1))) {
         changePlayer();
         setPlayer(); System.out.println(" has won the game!");
         return bool;
@@ -174,12 +174,11 @@ public class TicTacToe {
         bool = false;
         break;
       }
-
-      if (bool) {
-        changePlayer();
-        setPlayer(); System.out.println(" has won the game!");
-        return bool;
-      }
+    }
+    if (bool) {
+      changePlayer();
+      setPlayer(); System.out.println(" has won the game!");
+      return bool;
     }
 
     for (int i = grid.length - 1, j = 0; j < grid.length; i--, j++) {
@@ -189,13 +188,13 @@ public class TicTacToe {
         bool = false;
         break;
       }
-
-      if (bool) {
-        changePlayer();
-        setPlayer(); System.out.println(" has won the game!");
-        return bool;
-      }
     }
+    if (bool) {
+      changePlayer();
+      setPlayer(); System.out.println(" has won the game!");
+      return bool;
+    }
+
     return bool;
   }
 }
